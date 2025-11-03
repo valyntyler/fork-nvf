@@ -64,6 +64,17 @@
       root_markers = ["composer.json" ".git"];
     };
   };
+
+  defaultFormat = "php-cs-fixer";
+  formats = {
+    php-cs-fixer = {
+      package = pkgs.writeShellApplication {
+        name = "php-cs-fixer";
+        runtimeInputs = [pkgs.php83Packages.php-cs-fixer];
+        text = "php-cs-fixer fix --rules=@PSR12 $FILENAME";
+      };
+    };
+  };
 in {
   options.vim.languages.php = {
     enable = mkEnableOption "PHP language support";
