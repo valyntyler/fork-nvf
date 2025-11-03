@@ -14,6 +14,7 @@ in {
     ./elixir.nix
     ./fsharp.nix
     ./gleam.nix
+    ./gdscript.nix
     ./go.nix
     ./hcl.nix
     ./helm.nix
